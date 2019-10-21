@@ -1,0 +1,26 @@
+{
+  "name": "crypto-server",
+  "version": "1.0.0",
+  "description": "Server application for cryptocurrencies",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "mongoose": "*",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "swagger-ui-express": "^4.0.7"
+  },
+  "author": "Stefan Nikolic",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^6.2.0",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2"
+  }
+}

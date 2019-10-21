@@ -1,0 +1,124 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Cryptocurrency Service",
+        "description": "Cryptocurrency Service Swagger page and api description",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "shrouded-temple-66693.herokuapp.com",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Cryptocurrencies",
+            "description": "API for cryptocurrencies in the system"
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/cryptocurrencies/{crypto_symbol}": {
+            "parameters": [
+                {
+                    "name": "crypto_symbol",
+                    "in": "path",
+                    "required": true,
+                    "description": "Cryptocurrency symbol",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Cryptocurrencies"
+                ],
+                "summary": "Get cryptocurrency for specified symbol",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Cryptocurrency"
+                        }
+                    }
+                }
+            }
+        },
+        "/cryptocurrencies/{crypto_symbol}/prices": {
+            "parameters": [
+                {
+                    "name": "crypto_symbol",
+                    "in": "path",
+                    "required": true,
+                    "description": "Cryptocurrency symbol",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Cryptocurrencies"
+                ],
+                "summary": "Get cryptocurrency prices for specified symbol",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Price"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Cryptocurrency": {
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "symbol": {
+                    "type": "string"
+                },
+                "rank": {
+                    "type": "number"
+                },
+                "marketShare": {
+                    "type": "number"
+                },
+                "price": {
+                    "type": "number"
+                },
+                "lastUpdated": {
+                    "type": "string"
+                }
+            }
+        },
+        "Price": {
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "symbol": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "number"
+                }
+            }
+        }
+    }
+}
